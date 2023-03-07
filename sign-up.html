@@ -26,7 +26,8 @@
                             <div id="card-wrapper" class="row justify-content-center">
                                 <div class="col-md-10 col-lg-6 col-xl-7 order-2 order-lg-2">
 
-                                    <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">สมัครสมาชิก</p>
+                                    <p id="header" class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">ข้อมูลส่วนตัว
+                                    </p>
 
                                     <form id="form-step1" class="mx-1 mx-md-4">
 
@@ -110,7 +111,77 @@
     </section>
 
     <script>
+        function summit_step0() {
+            document.getElementById('header').innerHTML = `ข้อมูลส่วนตัว`
+            document.getElementById('step-wrapper').innerHTML = `
+                                        <p class="m-5 fw-bold"><span
+                                                style="border-radius: 100px; padding: 10px 23px; background-color: #9900ff; color: #fff;">1</span>
+                                             ข้อมูลส่วนตัว
+                                        </p>
+                                        <p class="m-5 fw-bold"><span
+                                                style="border-radius: 100px; padding: 10px 20px; background-color: #d5d5d5; color: #fff;">2</span>
+                                            ช้อมูลการเงิน
+                                        </p>
+                                        <p class="m-5 fw-bold"><span
+                                                style="border-radius: 100px; padding: 10px 20px; background-color: #d5d5d5; color: #fff;">3</span>
+                                            หลักฐานการชำระเงิน
+                                        </p>
+            `
+
+            document.getElementById('form-step1').innerHTML = `
+                    <div class="d-flex flex-row align-items-center mb-4">
+                                            <select style="border: #000 solid 2px;" class="form-select"
+                                                aria-label="Default select example">
+
+                                                <option value="นาย" selected>นาย</option>
+                                                <option value="นาง">นาง</option>
+                                                <option value="นางสาว">นางสาว</option>
+                                            </select>
+                                        </div>
+                                        <div class="d-flex flex-row align-items-center mb-4">
+
+                                            <div class=" flex-fill mb-0 me-1">
+                                                <input type="text" style="border: #000 solid 2px;" placeholder="ชื่อ"
+                                                    id="form3Example1c" class="form-control" />
+
+                                            </div>
+                                            <div class=" flex-fill mb-0">
+                                                <input type="text" style="border: #000 solid 2px;" placeholder="นามสกุล"
+                                                    id="form3Example3c" class="form-control" />
+
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex flex-row align-items-center mb-4">
+
+                                            <div class=" flex-fill mb-0">
+                                                <input type="tel" maxlength="10" minlength="10"
+                                                    oninput="this.value = this.value.replace(/[^0-9.]/g, '')"
+                                                    style=" border: #000 solid 2px;" placeholder="เบอร์โทร"
+                                                    id="form3Example3c" class="form-control" />
+
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex flex-row align-items-center mb-4">
+
+                                            <div class=" flex-fill mb-0">
+                                                <input type="tel" maxlength="13" minlength="13"
+                                                    oninput="this.value = this.value.replace(/[^0-9.]/g, '')"
+                                                    style=" border: #000 solid 2px;"
+                                                    placeholder="เลขบัตรประจำตัว 13 หลัก" id="form3Example3c"
+                                                    class="form-control" />
+
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                                            <button type="button" class="btn btn-lg" onclick="summit_step1()"
+                                                style=" background-color: #9900ff; color: #fff;">ถัดไป</button>
+                                        </div>
+              `
+        }
         function summit_step1() {
+            document.getElementById('header').innerHTML = `ข้อมูลการเงิน`
             document.getElementById('step-wrapper').innerHTML = `
                                         <p class="m-5 fw-bold"><span
                                                 style="border-radius: 100px; padding: 10px 23px; background-color: #d5d5d5; color: #fff;">1</span>
@@ -151,6 +222,8 @@
 
                                      
                                         <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                                            <button onclick="summit_step0()" type="button" class="btn btn-lg me-1"
+                                                style=" background-color: #eee; color: #000;">ย้อนกลับ</button>
                                             <button onclick="summit_step2()" type="button" class="btn btn-lg"
                                                 style=" background-color: #9900ff; color: #fff;">ถัดไป</button>
                                         </div>
@@ -158,6 +231,7 @@
         }
 
         function summit_step2() {
+            document.getElementById('header').innerHTML = `หลักฐานการชำระเงิน`
             document.getElementById('step-wrapper').innerHTML = `
                                         <p class="m-5 fw-bold"><span
                                                 style="border-radius: 100px; padding: 10px 23px; background-color: #d5d5d5; color: #fff;">1</span>
@@ -173,6 +247,14 @@
                                         </p>
             `
             document.getElementById('form-step1').innerHTML = `
+                                         <h5>ข้อมูลผู้แนะนำ</h5>
+  
+                                        <div class=" flex-fill mb-0 me-1 mb-3">
+                                                <input type="text" style="border: #000 solid 2px;" placeholder="ชื่อ นามสกุล"
+                                                    id="form3Example1c" class="form-control" />
+
+                                            </div>
+
                                         <h5>ข้อมูลผู้รับโอนเงิน</h5>
   
                                         <div class="d-flex flex-row align-items-center mb-4">
@@ -184,12 +266,12 @@
                                             </div>
                                         </div>
 
-                                        <div class="mb-3">
+                                        <div class="mb-2">
                                             <label for="formFile" class="form-label">โปรดอัพโหลดหลักฐานการชำระเงิน</label>
-                                            <input class="form-control" type="file" id="formFile">
+                                            <input style="border: #000 solid 2px;" class="form-control" type="file" id="formFile">
                                         </div>
 
-                                        <div class="form-check mb-5">
+                                        <div class="form-check mb-2">
                                             <input  class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
                                             <label  class="form-check-label" for="flexCheckChecked">
                                                 ข้าพเจ้ายินยอมให้ผู้บริการเก็บข้อมูลส่วนตัวของข้าพเจ้า
@@ -197,6 +279,8 @@
                                         </div>
                                      
                                         <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                                            <button onclick="summit_step1()" type="button" class="btn btn-lg me-1"
+                                                style=" background-color: #eee; color: #000;">ย้อนกลับ</button>
                                             <button onclick="summit_step3()" type="button" class="btn btn-lg"
                                                 style=" background-color: #9900ff; color: #fff;">ยืนยัน</button>
                                         </div>
