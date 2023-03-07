@@ -14,6 +14,38 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css" rel="stylesheet" />
     <!-- stylesheet -->
     <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        select#gender option[value="1"] {
+            background-image: url('./img/logo-kb.png');
+        }
+
+        select#gender option[value="female"] {
+            background-image: url(female.png);
+        }
+
+        select#gender option[value="others"] {
+            background-image: url(others.png);
+        }
+
+        .dd-options {
+            overflow-y: scroll !important
+        }
+
+        .dd-options img {
+            width: 10% !important
+        }
+
+        .dd-selected img {
+            width: 8% !important
+        }
+
+        .dd-selected-text {
+            color: #000 !important;
+            font-weight: 400;
+
+        }
+    </style>
 </head>
 
 <body style="background-color: #eee;">
@@ -32,7 +64,7 @@
                                     <form id="form-step1" class="mx-1 mx-md-4">
 
                                         <div class="d-flex flex-row align-items-center mb-4">
-                                            <select style="border: #000 solid 2px;" class="form-select"
+                                            <select style="border: #cdcdcd solid 2px;" class="form-select"
                                                 aria-label="Default select example">
 
                                                 <option value="นาย" selected>นาย</option>
@@ -43,13 +75,13 @@
                                         <div class="d-flex flex-row align-items-center mb-4">
 
                                             <div class=" flex-fill mb-0 me-1">
-                                                <input type="text" style="border: #000 solid 2px;" placeholder="ชื่อ"
+                                                <input type="text" style="border: #cdcdcd solid 2px;" placeholder="ชื่อ"
                                                     id="form3Example1c" class="form-control" />
 
                                             </div>
                                             <div class=" flex-fill mb-0">
-                                                <input type="text" style="border: #000 solid 2px;" placeholder="นามสกุล"
-                                                    id="form3Example3c" class="form-control" />
+                                                <input type="text" style="border: #cdcdcd solid 2px;"
+                                                    placeholder="นามสกุล" id="form3Example3c" class="form-control" />
 
                                             </div>
                                         </div>
@@ -59,7 +91,7 @@
                                             <div class=" flex-fill mb-0">
                                                 <input type="tel" maxlength="10" minlength="10"
                                                     oninput="this.value = this.value.replace(/[^0-9.]/g, '')"
-                                                    style=" border: #000 solid 2px;" placeholder="เบอร์โทร"
+                                                    style=" border: #cdcdcd solid 2px;" placeholder="เบอร์โทร"
                                                     id="form3Example3c" class="form-control" />
 
                                             </div>
@@ -70,7 +102,7 @@
                                             <div class=" flex-fill mb-0">
                                                 <input type="tel" maxlength="13" minlength="13"
                                                     oninput="this.value = this.value.replace(/[^0-9.]/g, '')"
-                                                    style=" border: #000 solid 2px;"
+                                                    style=" border: #cdcdcd solid 2px;"
                                                     placeholder="เลขบัตรประจำตัว 13 หลัก" id="form3Example3c"
                                                     class="form-control" />
 
@@ -110,6 +142,9 @@
         </div>
     </section>
 
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.rawgit.com/prashantchaudhary/ddslick/master/jquery.ddslick.min.js"></script>
     <script>
         function summit_step0() {
             document.getElementById('header').innerHTML = `ข้อมูลส่วนตัว`
@@ -130,7 +165,7 @@
 
             document.getElementById('form-step1').innerHTML = `
                     <div class="d-flex flex-row align-items-center mb-4">
-                                            <select style="border: #000 solid 2px;" class="form-select"
+                                            <select style="border: #cdcdcd solid 2px;" class="form-select"
                                                 aria-label="Default select example">
 
                                                 <option value="นาย" selected>นาย</option>
@@ -141,12 +176,12 @@
                                         <div class="d-flex flex-row align-items-center mb-4">
 
                                             <div class=" flex-fill mb-0 me-1">
-                                                <input type="text" style="border: #000 solid 2px;" placeholder="ชื่อ"
+                                                <input type="text" style="border: #cdcdcd solid 2px;" placeholder="ชื่อ"
                                                     id="form3Example1c" class="form-control" />
 
                                             </div>
                                             <div class=" flex-fill mb-0">
-                                                <input type="text" style="border: #000 solid 2px;" placeholder="นามสกุล"
+                                                <input type="text" style="border: #cdcdcd solid 2px;" placeholder="นามสกุล"
                                                     id="form3Example3c" class="form-control" />
 
                                             </div>
@@ -157,7 +192,7 @@
                                             <div class=" flex-fill mb-0">
                                                 <input type="tel" maxlength="10" minlength="10"
                                                     oninput="this.value = this.value.replace(/[^0-9.]/g, '')"
-                                                    style=" border: #000 solid 2px;" placeholder="เบอร์โทร"
+                                                    style=" border: #cdcdcd solid 2px;" placeholder="เบอร์โทร"
                                                     id="form3Example3c" class="form-control" />
 
                                             </div>
@@ -168,7 +203,7 @@
                                             <div class=" flex-fill mb-0">
                                                 <input type="tel" maxlength="13" minlength="13"
                                                     oninput="this.value = this.value.replace(/[^0-9.]/g, '')"
-                                                    style=" border: #000 solid 2px;"
+                                                    style=" border: #cdcdcd solid 2px;"
                                                     placeholder="เลขบัตรประจำตัว 13 หลัก" id="form3Example3c"
                                                     class="form-control" />
 
@@ -199,13 +234,19 @@
             document.getElementById('form-step1').innerHTML = `
                                         <p style="color: red;">*กรุณาใช้ชื่อบัญชีธนาคารที่ตรงกับข้อมูลตามบัตรประชาชน <p>
                                         <div class="d-flex flex-row align-items-center mb-4">
-                                            <select style="border: #000 solid 2px;" class="form-select"
+                                            <select id="gender" style="border: #cdcdcd solid 2px; " class="form-select"
                                                 aria-label="Default select example">
 
-                                                <option value="1" selected>กสิกร</option>
-                                                <option value="2">กรุงเทพ</option>
-                                                <option value="3">ไทยพาณิช</option>
-                                            </select>
+                                                <option value="กสิกร" data-imagesrc="img/logo-kb.png"  data-description="ธนาคารกสิกรไทย">กสิกร</option>
+                                                <option value="กรุงเทพ" data-imagesrc="img/logo_bkk.png"  data-description="ธนาคารกรุงเทพ">กรุงเทพ</option>
+                                                <option value="ไทยพาณิชย์" data-imagesrc="img/logo-scb.png" data-description="ธนาคารไทยพาณิชย์">ไทยพาณิชย์</option>
+                                                <option value="กรุงศรี" data-imagesrc="img/logo-krung.png" data-description="ธนาคารกรุงศรี">กรุงศรี</option>
+                                                <option value="ธอส." data-imagesrc="img/logo-ghb.png" data-description="ธนาคารอาคารสงเคราะห์">ธอส.</option
+                                                <option value="ออมสิน" data-imagesrc="img/logo_o.png" data-description="ธนาคารออมสิน">ออมสิน</option>
+                                                <option value="กรุงไทย" data-imagesrc="img/logo_ktb.png" data-description="ธนาคารกรุงไทย">กรุงไทย</option>
+                                                <option value="ธนชาติ" data-imagesrc="img/logo_ttb.png" data-description="ธนาคารธนชาติ">ธนชาติ</option>
+                                                
+                                                </select>
                                         </div>
 
                                         <div class="d-flex flex-row align-items-center mb-4">
@@ -214,7 +255,7 @@
                                                 
                                                 <input type="tel" maxlength="10" minlength="10"
                                                     oninput="this.value = this.value.replace(/[^0-9.]/g, '')"
-                                                    style=" border: #000 solid 2px;" placeholder="เลขบัญชี"
+                                                    style=" border: #cdcdcd solid 2px;" placeholder="เลขบัญชี"
                                                     id="form3Example3c" class="form-control" />
 
                                             </div>
@@ -228,6 +269,17 @@
                                                 style=" background-color: #9900ff; color: #fff;">ถัดไป</button>
                                         </div>
             `
+
+            $('#gender').ddslick({
+                width: "100%",
+                height: "300px",
+                imagePosition: "left",
+                background: "#fff",
+
+                onSelected: function (selectedData) {
+                    //callback function: do something with selectedData;
+                }
+            });
         }
 
         function summit_step2() {
@@ -250,7 +302,7 @@
                                          <h5>ข้อมูลผู้แนะนำ</h5>
   
                                         <div class=" flex-fill mb-0 me-1 mb-3">
-                                                <input type="text" style="border: #000 solid 2px;" placeholder="ชื่อ นามสกุล"
+                                                <input type="text" style="border: #cdcdcd solid 2px;" placeholder="ชื่อ นามสกุล"
                                                     id="form3Example1c" class="form-control" />
 
                                             </div>
@@ -259,16 +311,16 @@
   
                                         <div class="d-flex flex-row align-items-center mb-4">
                                             
-                                            <div class=" flex-fill mb-0">
-                                                <label for="formFile" class="form-label">ธนาคาร</label>
-                                                <label for="formFile" class="form-label">ชื่อบัญชี สิทธิกร ขุมทอง</label>    
-                                                <label for="formFile" class="form-label">เลขบัญชี 212-5968-5598</label>    
+                                            <div class="flex-fill mb-0">
+                                                <p for="formFile" class="form-label">ธนาคาร</p>
+                                                <p for="formFile" class="form-label">ชื่อบัญชี  สิทธิกร ขุมทอง</p>    
+                                                <p for="formFile" class="form-label">เลขบัญชี 212-5968-5598</p>    
                                             </div>
                                         </div>
 
                                         <div class="mb-2">
                                             <label for="formFile" class="form-label">โปรดอัพโหลดหลักฐานการชำระเงิน</label>
-                                            <input style="border: #000 solid 2px;" class="form-control" type="file" id="formFile">
+                                            <input style="border: #cdcdcd solid 2px;" class="form-control" type="file" id="formFile">
                                         </div>
 
                                         <div class="form-check mb-2">
@@ -280,7 +332,7 @@
                                      
                                         <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                                             <button onclick="summit_step1()" type="button" class="btn btn-lg me-1"
-                                                style=" background-color: #eee; color: #000;">ย้อนกลับ</button>
+                                                style=" background-color: #eee; color: #cdcdcd;">ย้อนกลับ</button>
                                             <button onclick="summit_step3()" type="button" class="btn btn-lg"
                                                 style=" background-color: #9900ff; color: #fff;">ยืนยัน</button>
                                         </div>
