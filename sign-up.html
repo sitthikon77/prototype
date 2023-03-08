@@ -45,6 +45,52 @@
             font-weight: 400;
 
         }
+
+        .btn {
+            border: 2px solid black;
+            background-color: white;
+            color: black;
+            padding: 14px 14px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* Violet */
+        .violet {
+            border-color: #7f00d4;
+            color: #7f00d4;
+        }
+
+        .violet:hover {
+            background-color: #7f00d4;
+            color: white;
+        }
+
+        .Secondary {
+            border-color: #afafaf;
+            color: #afafaf;
+        }
+
+        .Secondary:hover {
+            background-color: #afafaf;
+            color: white;
+        }
+
+        @media (max-width: 1000px) {
+            #step-wrapper {
+                display: flex;
+
+            }
+
+            .text-step {
+                margin: 5px !important
+            }
+
+            .span-text {
+                display: none;
+            }
+
+        }
     </style>
 </head>
 
@@ -108,9 +154,9 @@
 
                                             </div>
                                         </div>
-                                        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                                            <button type="button" class="btn btn-lg" onclick="summit_step1()"
-                                                style=" background-color: #9900ff; color: #fff;">ถัดไป</button>
+                                        <div class="d-flex justify-content-end mx-4 mb-3 mb-lg-4">
+                                            <button class="btn btn-lg violet w-50" onclick="summit_step1()"
+                                                style="border-radius:30px">ถัดไป</button>
                                         </div>
 
                                     </form>
@@ -119,17 +165,17 @@
                                 <div
                                     class="col-md-10 col-lg-6 col-xl-5 d-grid justify-content-center align-items-start order-1 order-lg-1">
                                     <div id="step-wrapper">
-                                        <p class="m-5 fw-bold"><span
+                                        <p class="m-5 fw-bold text-step"><span
                                                 style="border-radius: 100px; padding: 10px 23px; background-color: #9900ff; color: #fff;">1</span>
-                                            ข้อมูลส่วนตัว
+                                            <span class="span-text">ข้อมูลส่วนตัว</span>
                                         </p>
-                                        <p class="m-5 fw-bold"><span
+                                        <p class="m-5 fw-bold text-step"><span
                                                 style="border-radius: 100px; padding: 10px 20px; background-color: #d5d5d5; color: #fff;">2</span>
-                                            ช้อมูลการเงิน
+                                            <span class="span-text">ช้อมูลการเงิน</span>
                                         </p>
-                                        <p class="m-5 fw-bold"><span
+                                        <p class="m-5 fw-bold text-step"><span
                                                 style="border-radius: 100px; padding: 10px 20px; background-color: #d5d5d5; color: #fff;">3</span>
-                                            หลักฐานการชำระเงิน
+                                            <span class="span-text">หลักฐานการชำระเงิน</span>
                                         </p>
                                     </div>
                                 </div>
@@ -149,17 +195,17 @@
         function summit_step0() {
             document.getElementById('header').innerHTML = `ข้อมูลส่วนตัว`
             document.getElementById('step-wrapper').innerHTML = `
-                                        <p class="m-5 fw-bold"><span
+                                        <p class="m-5 fw-bold text-step"><span
                                                 style="border-radius: 100px; padding: 10px 23px; background-color: #9900ff; color: #fff;">1</span>
-                                             ข้อมูลส่วนตัว
+                                            <span class="span-text">ข้อมูลส่วนตัว</span>
                                         </p>
-                                        <p class="m-5 fw-bold"><span
+                                        <p class="m-5 fw-bold text-step"><span
                                                 style="border-radius: 100px; padding: 10px 20px; background-color: #d5d5d5; color: #fff;">2</span>
-                                            ช้อมูลการเงิน
+                                            <span class="span-text">ช้อมูลการเงิน</span>
                                         </p>
-                                        <p class="m-5 fw-bold"><span
+                                        <p class="m-5 fw-bold text-step"><span
                                                 style="border-radius: 100px; padding: 10px 20px; background-color: #d5d5d5; color: #fff;">3</span>
-                                            หลักฐานการชำระเงิน
+                                            <span class="span-text">หลักฐานการชำระเงิน</span>
                                         </p>
             `
 
@@ -209,26 +255,26 @@
 
                                             </div>
                                         </div>
-                                        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                                            <button type="button" class="btn btn-lg" onclick="summit_step1()"
-                                                style=" background-color: #9900ff; color: #fff;">ถัดไป</button>
+                                        <div class="d-flex justify-content-end mx-4 mb-3 mb-lg-4">
+                                            <button class="btn btn-lg violet w-50" onclick="summit_step1()"
+                                                style="border-radius:30px">ถัดไป</button>
                                         </div>
               `
         }
         function summit_step1() {
             document.getElementById('header').innerHTML = `ข้อมูลการเงิน`
             document.getElementById('step-wrapper').innerHTML = `
-                                        <p class="m-5 fw-bold"><span
+                                        <p class="m-5 fw-bold text-step"><span
                                                 style="border-radius: 100px; padding: 10px 23px; background-color: #d5d5d5; color: #fff;">1</span>
-                                             ข้อมูลส่วนตัว
+                                            <span class="span-text">ข้อมูลส่วนตัว</span>
                                         </p>
-                                        <p class="m-5 fw-bold"><span
+                                        <p class="m-5 fw-bold text-step"><span
                                                 style="border-radius: 100px; padding: 10px 20px; background-color: #9900ff; color: #fff;">2</span>
-                                            ช้อมูลการเงิน
+                                            <span class="span-text">ช้อมูลการเงิน</span>
                                         </p>
-                                        <p class="m-5 fw-bold"><span
+                                        <p class="m-5 fw-bold text-step"><span
                                                 style="border-radius: 100px; padding: 10px 20px; background-color: #d5d5d5; color: #fff;">3</span>
-                                            หลักฐานการชำระเงิน
+                                            <span class="span-text">หลักฐานการชำระเงิน</span>
                                         </p>
             `
             document.getElementById('form-step1').innerHTML = `
@@ -262,12 +308,13 @@
                                         </div>
 
                                      
-                                        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                                            <button onclick="summit_step0()" type="button" class="btn btn-lg me-1"
-                                                style=" background-color: #eee; color: #000;">ย้อนกลับ</button>
-                                            <button onclick="summit_step2()" type="button" class="btn btn-lg"
-                                                style=" background-color: #9900ff; color: #fff;">ถัดไป</button>
+                                        <div class="d-flex justify-content-end mx-4 mb-3 mb-lg-4">
+                                            <button onclick="summit_step0()" type="button" class="btn btn-lg me-1 Secondary w-50"
+                                                style=" border-radius:30px;">ย้อนกลับ</button>
+                                            <button class="btn btn-lg violet w-50" onclick="summit_step2()"
+                                                style="border-radius:30px">ถัดไป</button>
                                         </div>
+                                      
             `
 
             $('#gender').ddslick({
@@ -285,17 +332,17 @@
         function summit_step2() {
             document.getElementById('header').innerHTML = `หลักฐานการชำระเงิน`
             document.getElementById('step-wrapper').innerHTML = `
-                                        <p class="m-5 fw-bold"><span
+                                        <p class="m-5 fw-bold text-step"><span
                                                 style="border-radius: 100px; padding: 10px 23px; background-color: #d5d5d5; color: #fff;">1</span>
-                                             ข้อมูลส่วนตัว
+                                            <span class="span-text">ข้อมูลส่วนตัว</span>
                                         </p>
-                                        <p class="m-5 fw-bold"><span
+                                        <p class="m-5 fw-bold text-step"><span
                                                 style="border-radius: 100px; padding: 10px 20px; background-color: #d5d5d5; color: #fff;">2</span>
-                                            ช้อมูลการเงิน
+                                            <span class="span-text">ช้อมูลการเงิน</span>
                                         </p>
-                                        <p class="m-5 fw-bold"><span
+                                        <p class="m-5 fw-bold text-step"><span
                                                 style="border-radius: 100px; padding: 10px 20px; background-color: #9900ff; color: #fff;">3</span>
-                                            หลักฐานการชำระเงิน
+                                            <span class="span-text">หลักฐานการชำระเงิน</span>
                                         </p>
             `
             document.getElementById('form-step1').innerHTML = `
@@ -330,11 +377,11 @@
                                             </label>
                                         </div>
                                      
-                                        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                                            <button onclick="summit_step1()" type="button" class="btn btn-lg me-1"
-                                                style=" background-color: #eee; color: #000;">ย้อนกลับ</button>
-                                            <button onclick="summit_step3()" type="button" class="btn btn-lg"
-                                                style=" background-color: #9900ff; color: #fff;">ยืนยัน</button>
+                                        <div class="d-flex justify-content-end mx-4 mb-3 mb-lg-4">
+                                            <button onclick="summit_step1()" type="button" class="btn btn-lg me-1 w-50 Secondary"
+                                                style=" border-radius:30px;">ย้อนกลับ</button>
+                                            <button class="btn btn-lg violet w-50" onclick="summit_step3()"
+                                                style="border-radius:30px">ยืนยัน</button>
                                         </div>
             `
         }
@@ -346,8 +393,8 @@
                                     <h5 class="text-secondary mb-5">หากมีข้อสงสัยสามารถติดต่อเจ้าหน้าที่ได้ที่เบอร์
                                         09x-xxx-xxxx</h5>
 
-                                    <button onclick="location.href = 'sign-in.html'" type="button" class="btn btn-lg fs-4"
-                                        style=" background-color: #9900ff; color: #fff;">หน้าล็อคอิน</button>
+                                    <button onclick="location.href = 'sign-in.html'" type="button" class="btn btn-lg px-5 fs-4 violet"
+                                        style=" border-radius:30px">หน้าล็อคอิน</button>
                                 </div>`
         }
 

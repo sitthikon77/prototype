@@ -14,6 +14,28 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css" rel="stylesheet" />
     <!-- stylesheet -->
     <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .btn {
+            border: 2px solid black;
+            background-color: white;
+            color: black;
+            padding: 14px 28px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* Violet */
+        .violet {
+            border-color: #7f00d4;
+            color: #7f00d4;
+        }
+
+        .violet:hover {
+            background-color: #7f00d4;
+            color: white;
+        }
+    </style>
 </head>
 
 <body style="background-color: #eee;">
@@ -41,8 +63,8 @@
 
 
 
-                            <button class="btn btn-lg btn-block" style=" background-color: #9900ff; color: #fff;"
-                                type="submit">เข้าสู่ระบบ</button>
+                            <button class="btn btn-lg btn-block violet" style=" border-radius:30px; " type="submit"
+                                onclick="gotodash()">เข้าสู่ระบบ</button>
 
                         </div>
                     </div>
@@ -56,4 +78,9 @@
 <!-- MDB -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"></script>
 
+</script>
+<script>
+    function gotodash() {
+        location.href = "dashboard/dashboard.html"
+    }
 </script>
